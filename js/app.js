@@ -99,6 +99,7 @@ class UI {
   addExpense(expense) {
     const div = document.createElement("div");
     div.classList.add("expense");
+    div.classList.add("my-3");
     div.innerHTML = `
       <div
         class="expense-item d-flex justify-content-between align-items-baseline"
@@ -145,11 +146,7 @@ class UI {
     console.log(id);
     let parent = element.parentElement.parentElement.parentElement;
     // remove from dom
-    // this.expenseList.removeChild(parent);
-    const expense = this.expenseList.querySelectorAll(".expense");
-    expense.forEach((item) => {
-      item.remove(parent);
-    });
+    this.expenseList.removeChild(parent);
 
     // delete item
     let tempList = this.itemList.filter(function (expense) {
